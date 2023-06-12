@@ -1,17 +1,11 @@
 from Insurance.logger import logging
 from Insurance.exception import InsuranceException
 import os ,sys
+from Insurance.utils import get_collection_as_dataframe
 
-def testing():
-    try:
-        a=3/0
-        logging.info("testing complited")
-    except Exception as e:
-        logging.info(str(e))
-        raise InsuranceException(e,sys)
 
 if __name__=="__main__":
     try:
-        testing()
+      get_collection_as_dataframe(database_name="INSURANCE",collection_name="INSURANCE_PROJECT")
     except Exception as e:
         print(e)
