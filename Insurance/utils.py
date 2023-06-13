@@ -95,6 +95,8 @@ def save_numpy_array_data(file_path: str, array: np.array):
 
 # Model Training
 
+
+
 def load_numpy_array_data(file_path: str) -> np.array:
     """
     load numpy array data from file
