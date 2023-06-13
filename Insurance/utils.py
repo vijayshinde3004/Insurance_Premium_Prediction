@@ -62,6 +62,7 @@ def save_object(file_path: str, obj: object) -> None:
         raise InsuranceException(e, sys) from e
 
     
+
 def load_object(file_path: str, ) -> object:
     try:
         if not os.path.exists(file_path):
@@ -70,6 +71,8 @@ def load_object(file_path: str, ) -> object:
             return dill.load(file_obj)
     except Exception as e:
         raise InsuranceException(e, sys) from e
+
+
 
 def save_numpy_array_data(file_path: str, array: np.array):
     """
@@ -85,6 +88,10 @@ def save_numpy_array_data(file_path: str, array: np.array):
             np.save(file_obj, array)
     except Exception as e:
         raise InsuranceException(e, sys) from e
+
+
+
+
 
 # Model Training
 
