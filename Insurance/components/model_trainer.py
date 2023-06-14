@@ -4,6 +4,7 @@ from Insurance.logger import logging
 from typing import Optional
 import os,sys 
 from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
 from Insurance import utils
 from sklearn.metrics import r2_score
 
@@ -21,25 +22,11 @@ class ModelTrainer:
         except Exception as e:
             raise InsuranceException(e, sys)
 
-    def fine_tune(self):
-        try:
-            #Wite code for Grid Search CV
-            pass
-            
-
-        except Exception as e:
-            raise InsuranceException(e, sys)
 
     def train_model(self,x,y):
-        # try:
-        #     xgb_r = xg.XGBRegressor()
-        #     xgb_r.fit(x,y)
-        #     return xgb_r
-        # except Exception as e:
-        #     raise InsuranceException(e, sys)
 
         try:
-            lr = LinearRegression()
+            lr = RandomForestRegressor()
             lr.fit(x,y)
             return lr
         except Exception as e:
