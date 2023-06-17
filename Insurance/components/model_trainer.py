@@ -26,7 +26,7 @@ class ModelTrainer:
     def train_model(self,x,y):
 
         try:
-            lr = RandomForestRegressor()
+            lr = LinearRegression()
             lr.fit(x,y)
             return lr
         except Exception as e:
